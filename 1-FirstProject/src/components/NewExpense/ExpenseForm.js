@@ -79,9 +79,10 @@ const ExpenseForm = (props) => {
           <input
             type="text"
             value={enteredTitle}
-            onChange={(event) =>
-              inputChangeHandler("title", event.target.value)
-            }
+            // onChange={(event) =>
+            //   inputChangeHandler("title", event.target.value)
+            // }
+            onChange={titleChangeHandler}
           />
         </div>
         <div className="new-expense__control">
