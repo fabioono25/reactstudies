@@ -1,18 +1,25 @@
+import { useState } from "react";
 import Header from "./Header/Hearder";
 import ResultsTable from "./ResultsTable/ResultsTable";
 import UserInput from "./UserInput/UserInput";
 
 function App() {
+  const [userInput, setUserInput] = useState(null);
+
   const calculateHandler = (userInput) => {
     // Should be triggered when form is submitted
     // You might not directly want to bind it to the submit event on the form though...
+    setUserInput(userInput);
+    // do something with yearlyData ...
+  };
 
-    const yearlyData = []; // per-year results
+  const yearlyData = []; // per-year results
 
-    let currentSavings = +userInput['current-savings']; // feel free to change the shape of this input object!
-    const yearlyContribution = +userInput['yearly-contribution']; // as mentioned: feel free to change the shape...
-    const expectedReturn = +userInput['expected-return'] / 100;
-    const duration = +userInput['duration'];
+  if (userInput) {
+    let currentSavings = +userInput["current-savings"]; // feel free to change the shape of this input object!
+    const yearlyContribution = +userInput["yearly-contribution"]; // as mentioned: feel free to change the shape...
+    const expectedReturn = +userInput["expected-return"] / 100;
+    const duration = +userInput["duration"];
 
     // The below code calculates yearly results (total savings, interest etc)
     for (let i = 0; i < duration; i++) {
@@ -26,9 +33,7 @@ function App() {
         yearlyContribution: yearlyContribution,
       });
     }
-
-    // do something with yearlyData ...
-  };
+  }
 
   return (
     <div>
@@ -39,7 +44,8 @@ function App() {
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {/* Show fallback text if no data is available */}
 
-      <ResultsTable />
+      {!userInput && <p style={{ textAlign: 'center' }}>No data available</p>}
+      {userInput && <ResultsTable data={yearlyData} initialInvestment={userInput["current-savings"]}/>}
     </div>
   );
 }
