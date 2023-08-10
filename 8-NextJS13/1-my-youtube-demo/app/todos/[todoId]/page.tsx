@@ -9,7 +9,7 @@ type PageProps = {
 
 const fetchTodo = async (todoId: string) => {
   const res = await fetch(
-    `https://jsonplaceholder.typicode.com/todos/${todoId}`
+    `https://jsonplaceholder.typicode.com/todos/${todoId}`, { next: { revalidate: 60 } }
   );
   const todo = await res.json();
   return todo;
@@ -32,3 +32,17 @@ async function TodoPage({ params: { todoId } }: PageProps) {
 }
 
 export default TodoPage;
+
+export async function generateStaticParams() {
+  // fetching all possible todos
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const todos: Todo[] = await res.json();
+
+  // avoiding rate limited in 10
+  const trimmedTodos = todos.slice(0, 10);
+
+  return todos.map((todo) => ({
+    todoId: todo.id.toString(),
+    title: todo.title
+  }))
+}
