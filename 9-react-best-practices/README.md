@@ -4,7 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Some Tips about React
 
-### Title
+### Purity
+
 
 content
 
@@ -51,7 +52,6 @@ content
 ### Title
 
 content
-
 
 ### Q&A
 
@@ -68,3 +68,11 @@ Passing data how? Props. You can pass anything as a prop (even other components 
 key prop. just to organize items in react (unique string or number). You can use the index during map as a key.
 
 Rendering: using VDOM (Virtual DOM - Document Object Model). Stage changed? React diffs (what changed), Reconciliation (put it all together).
+
+Event Handling: how React handles user interactions. onClick, onChange, onSubmit={handleIt}
+
+Manage data: use state, with hooks like useState and useReducer. onChange={ e => setValue(e.target.value)}
+
+Main React hooks: useState, useRedux, useContext, useRef, useEffect, useMemo, useCallback.
+
+Purity: how React components should work. Pure component: Same input should always return the same output.
