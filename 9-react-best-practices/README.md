@@ -76,3 +76,17 @@ Manage data: use state, with hooks like useState and useReducer. onChange={ e =>
 Main React hooks: useState, useRedux, useContext, useRef, useEffect, useMemo, useCallback.
 
 Purity: how React components should work. Pure component: Same input should always return the same output.
+
+Strict Mode: mistakes at development time.
+
+Effects: when we talk to external systems (HTTP request, async). useEffect hook.  useEffect(() => { fetchData().then(x => ...) , []})
+
+Working directly with DOM: useRef <input ref={ref}>
+
+Context: pass properties without props.
+
+Portals: context for components (modals, dropdowns, tooltips).
+
+Suspense: loading spinner/lazily loading a component.
+
+Error Boundaries: catch app-breaking errors.
