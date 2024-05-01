@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 
-const StateWithApiCall = () => {
+const ServerState = () => {
   const [issues, setIssues] = useState([]);
 
   // this is not recommended, because we are mutating the state directly. Not recommended in React.
@@ -34,4 +34,4 @@ const StateWithApiCall = () => {
   return <div></div>;
 };
 
-export default StateWithApiCall;
+export default ServerState;

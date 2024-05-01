@@ -11,7 +11,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import { FallBack } from "./components/5-error-boundary/fallback";
 import ErrorImmutable from "./components/6-mutability/error-immutable";
 import FixImmutable from "./components/6-mutability/fix-immutability";
-import StateWithApiCall from "./components/7-using-state/state-with-api-call";
+import ServerState from "./components/7-using-state/server-state";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 const queryClient = new QueryClient();
@@ -47,7 +47,7 @@ function App() {
       <hr />
       <h4>Good practices for managing state</h4>
       <QueryClientProvider client={queryClient}>
-        <StateWithApiCall />
+        <ServerState />
       </QueryClientProvider>
 
       <hr />
