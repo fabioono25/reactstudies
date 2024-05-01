@@ -97,3 +97,4 @@ React State must be immutable: copy of old data + changes + change original with
 
 Don't use useState for everything: server, URL, local storage types. Questions to be considered: can it be computed each render? some library possibly contains that state? does it need to be rendered?
 
+Careful about useState() and useEffect() all the time.

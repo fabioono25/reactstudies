@@ -13,6 +13,7 @@ import ErrorImmutable from "./components/6-mutability/error-immutable";
 import FixImmutable from "./components/6-mutability/fix-immutability";
 import ServerState from "./components/7-using-state/server-state";
 import { QueryClient, QueryClientProvider } from "react-query";
+import FormatDate from "./components/7-using-state/format-date";
 
 const queryClient = new QueryClient();
 
@@ -44,11 +45,15 @@ function App() {
       <h4>Immutability</h4>
       <ErrorImmutable />
       <FixImmutable />
+      <FormatDate date="2024-05-10" date2="2024-05-10"/>
+
+
       <hr />
       <h4>Good practices for managing state</h4>
       <QueryClientProvider client={queryClient}>
         <ServerState />
       </QueryClientProvider>
+
 
       <hr />
       <h4>Using Portal</h4>
