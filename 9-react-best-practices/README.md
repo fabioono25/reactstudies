@@ -6,8 +6,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Purity
 
+In React, the term "purity" typically refers to the concept of pure components. A pure component is a React component that renders the same output given the same input. In other words, a pure component is a function of its props and state, and it does not rely on any external factors such as global variables or mutable state outside of its scope.
 
-content
+Pure components are important because they enable optimizations in React's rendering process. React can perform shallow comparisons between the previous and current props and state of a pure component to determine if it needs to re-render. If the props and state haven't changed, React can skip the rendering process for that component, resulting in performance improvements, especially in large applications with many components.
+
 
 ### Title
 
@@ -90,3 +92,8 @@ Portals: context for components (modals, dropdowns, tooltips).
 Suspense: loading spinner/lazily loading a component.
 
 Error Boundaries: catch app-breaking errors.
+
+React State must be immutable: copy of old data + changes + change original with the new code.
+
+Don't use useState for everything: server, URL, local storage types. Questions to be considered: can it be computed each render? some library possibly contains that state? does it need to be rendered?
+

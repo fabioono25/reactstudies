@@ -9,6 +9,12 @@ import DataFetcher from "./components/3-suspense/DataFetcher";
 import TestWithError from "./components/5-error-boundary/test";
 import { ErrorBoundary } from "react-error-boundary";
 import { FallBack } from "./components/5-error-boundary/fallback";
+import ErrorImmutable from "./components/6-mutability/error-immutable";
+import FixImmutable from "./components/6-mutability/fix-immutability";
+import StateWithApiCall from "./components/7-using-state/state-with-api-call";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
@@ -32,8 +38,17 @@ function App() {
       <hr />
       <h4>Using Error Boundaries</h4>
       <ErrorBoundary FallbackComponent={FallBack}>
-        <TestWithError />
+        {/* <TestWithError /> */}
       </ErrorBoundary>
+      <hr />
+      <h4>Immutability</h4>
+      <ErrorImmutable />
+      <FixImmutable />
+      <hr />
+      <h4>Good practices for managing state</h4>
+      <QueryClientProvider client={queryClient}>
+        <StateWithApiCall />
+      </QueryClientProvider>
 
       <hr />
       <h4>Using Portal</h4>
