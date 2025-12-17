@@ -91,13 +91,13 @@ console.log(editedHobbies);
 // const name = user.name;
 // const age = user.age;
 
-const hobbies2 = ["Sports", "Cooking"];
+const hobbies2 = ["Sports", "Cooking", "Gaming"];
 const user = {
   name: "Max",
-  age: 34
+  age: 34,
 };
 
-const newHobbies = ["Reading"];
+const newHobbies = ["Reading", "Traveling", "Photography"];
 
 const mergedHobbies = [...hobbies2, ...newHobbies];
 console.log(hobbies2); // print the array as a single value
